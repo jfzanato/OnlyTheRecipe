@@ -1,4 +1,5 @@
 export const supportedDomains = [
+    'tudogostoso.com.br',
     'allrecipes.com',
     'bbcgoodfood.com',
     'bettycrocker.com',
@@ -70,6 +71,11 @@ type recipeSelectorSet = {
 type domainInformationSelector = { [key in typeof supportedDomains[number]]?: recipeSelectorSet };
 
 export const recipeSelectors: domainInformationSelector = {
+    'tudogostoso.com.br' : {
+        titleSelector: 'div[class="headline-wrapper"] > h1',
+        ingredientsSelector: 'section[data-tracking-zone="recipe-ingredients"] > fieldset > ul > li',
+        directionsSelector: 'ul[class="instructions-section"] > li',
+    },
     'allrecipes.com' : {
         titleSelector: 'div[class="headline-wrapper"] > h1',
         ingredientsSelector: 'section[data-tracking-zone="recipe-ingredients"] > fieldset > ul > li',
